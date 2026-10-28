@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+/* Font z własnego serwera (paczka npm), a nie z Google Fonts - przeglądarka
+   nie wysyła adresu IP użytkownika do Google (RODO) i działa bez zewnętrznej sieci */
+@import '@fontsource-variable/dm-sans';
+
+@theme {
+  --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-canvas: #f6f5f2;
+  --color-surface: #ffffff;
+  --color-line: #ebe8e2;
+  --color-line-strong: #d9d5cd;
+
+  --color-ink: #24282d;
+  --color-ink-soft: #4d535b;
+  --color-muted: #5b6169; /* podpisy, etykiety (kontrast 6:1 na białym) */
+  --color-subtle: #8a8f96; /* tylko ozdobniki, np. "-" w pustej komórce */
+
+  --color-brand-50: #e3f1ef;
+  --color-brand-100: #c6e4df;
+  --color-brand-600: #0f766e;
+  --color-brand-700: #0f5f59;
+  --color-brand-800: #0a4743;
+
+  --color-danger: #8c1d13;
+  --color-danger-soft: #fdecea;
+  --color-warning: #7a4a00;
+  --color-warning-soft: #fff4e0;
+  --color-success: #1d6b3a;
+  --color-success-soft: #e6f4ea;
+  --color-info: #2b4a9b;
+  --color-info-soft: #e8eefc;
+
+  --radius-card: 1.25rem;
+  --shadow-card: 0 1px 2px rgb(36 40 45 / 0.06), 0 1px 1px rgb(36 40 45 / 0.03);
+}
+
+@layer base {
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-600;
+  }
+}
